@@ -3,23 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bylezdac</title>
+    <title>bylezdac - Historia Zadań</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Historia Zadań - bylezdac</h1>
-        <p class="free-access">Dostęp do materiałów jest całkowicie darmowy.</p>
+        <header>
+            <h1>bylezdac</h1>
+            <p class="subtitle">Darmowy dostęp do historii zadań nauczyciela</p>
+        </header>
 
-        <h2>Lista Zadań:</h2>
-        <ul class="task-list">
-            <li><a href="zadanie1.html">Zadanie 1: Prosta strona HTML</a></li>
-            <li><a href="zadanie2.html">Zadanie 2: Podstawowe stylowanie CSS</a></li>
-            <li><a href="zadanie3.html">Zadanie 3: Prosty skrypt JS (Alert)</a></li>
-            <!-- Dodaj więcej zadań w tym formacie -->
-        </ul>
+        <main>
+            <div class="tasks-container">
+                <h2>Lista Zadań</h2>
+                <div class="task-list" id="taskList">
+                    <!-- Tasks will be loaded via JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <div id="taskModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div class="preview-section">
+                    <h3>Podgląd:</h3>
+                    <div id="taskPreview" class="preview-container"></div>
+                </div>
+                <div class="code-section">
+                    <h3>Kod źródłowy:</h3>
+                    <pre><code id="taskCode"></code></pre>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Chociaż nie używamy JS do funkcjonalności, można go tu podlinkować na przyszłość -->
-    <!-- <script src="script.js"></script> -->
+    <script src="main.js"></script>
 </body>
 </html>
