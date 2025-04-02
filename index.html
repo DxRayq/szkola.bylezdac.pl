@@ -1,62 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bylezdac - Archiwum zadań nauczyciela</title>
-    <meta name="description" content="Archiwum zadań nauczyciela z HTML, CSS i JavaScript. Darmowy dostęp do przykładów i rozwiązań." />
-    <meta name="author" content="bylezdac" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bylezdac</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Historia Zadań - bylezdac</h1>
+        <p class="free-access">Dostęp do materiałów jest całkowicie darmowy.</p>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <div class="logo">
-            <a href="index.html">bylezdac</a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Strona główna</a></li>
-            <li><a href="archive.html" class="active">Archiwum</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="container">
-      <section class="hero">
-        <h1>Archiwum zadań nauczyciela</h1>
-        <p>Przykładowe zadania i rozwiązania z HTML, CSS i JavaScript.</p>
-      </section>
-
-      <section class="filters">
-        <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Szukaj zadania..." />
-        </div>
-        <div class="filter-tags">
-          <button class="tag-filter active" data-tag="all">Wszystkie</button>
-          <button class="tag-filter" data-tag="HTML">HTML</button>
-          <button class="tag-filter" data-tag="CSS">CSS</button>
-          <button class="tag-filter" data-tag="JavaScript">JavaScript</button>
-        </div>
-      </section>
-
-      <section class="assignments-grid" id="assignmentsContainer">
-        <!-- Assignments will be populated by JavaScript -->
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <p>© <span id="currentYear"></span> bylezdac - Archiwum zadań nauczyciela</p>
-          <p><span class="highlight">Dostęp jest całkowicie darmowy</span> - Powodzenia w nauce!</p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="./assignments.js"></script>
-    <script src="./script.js"></script>
-  </body>
+        <h2>Lista Zadań:</h2>
+        <ul class="task-list">
+            <li><a href="zadanie1.html">Zadanie 1: Prosta strona HTML</a></li>
+            <li><a href="zadanie2.html">Zadanie 2: Podstawowe stylowanie CSS</a></li>
+            <li><a href="zadanie3.html">Zadanie 3: Prosty skrypt JS (Alert)</a></li>
+            <!-- Dodaj więcej zadań w tym formacie -->
+        </ul>
+    </div>
+    <!-- Chociaż nie używamy JS do funkcjonalności, można go tu podlinkować na przyszłość -->
+    <!-- <script src="script.js"></script> -->
+</body>
 </html>
