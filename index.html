@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bylezdac - Darmowe Zadania</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bylezdac - Archiwum zadań nauczyciela</title>
+    <meta name="description" content="Archiwum zadań nauczyciela z HTML, CSS i JavaScript. Darmowy dostęp do przykładów i rozwiązań." />
+    <meta name="author" content="bylezdac" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
     <header>
-        <h1>bylezdac</h1>
-        <p class="subtitle">Darmowy dostęp do zadań i rozwiązań</p>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">bylezdac</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="archive.html" class="active">Archiwum</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <main>
-        <section class="assignments">
-            <h2>Historia Zadań</h2>
-            <div id="assignmentList">
-                <!-- Zadania będą dodawane przez JavaScript -->
-            </div>
-        </section>
+    <main class="container">
+      <section class="hero">
+        <h1>Archiwum zadań nauczyciela</h1>
+        <p>Przykładowe zadania i rozwiązania z HTML, CSS i JavaScript.</p>
+      </section>
+
+      <section class="filters">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Szukaj zadania..." />
+        </div>
+        <div class="filter-tags">
+          <button class="tag-filter active" data-tag="all">Wszystkie</button>
+          <button class="tag-filter" data-tag="HTML">HTML</button>
+          <button class="tag-filter" data-tag="CSS">CSS</button>
+          <button class="tag-filter" data-tag="JavaScript">JavaScript</button>
+        </div>
+      </section>
+
+      <section class="assignments-grid" id="assignmentsContainer">
+        <!-- Assignments will be populated by JavaScript -->
+      </section>
     </main>
 
     <footer>
-        <p>© 2024 bylezdac - Wszystkie materiały są dostępne za darmo</p>
+      <div class="container">
+        <div class="footer-content">
+          <p>© <span id="currentYear"></span> bylezdac - Archiwum zadań nauczyciela</p>
+          <p><span class="highlight">Dostęp jest całkowicie darmowy</span> - Powodzenia w nauce!</p>
+        </div>
+      </div>
     </footer>
 
-    <script src="main.js"></script>
-</body>
+    <script src="./assignments.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
