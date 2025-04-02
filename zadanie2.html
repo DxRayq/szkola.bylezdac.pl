@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 2: Podstawowe stylowanie CSS - bylezdac</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container task-detail-container">
+        <a href="index.html" class="back-link">← Wróć do listy</a>
+        <h1>Zadanie 2: Podstawowe stylowanie CSS</h1>
+
+        <h2>Efekt / Wygląd Strony:</h2>
+        <iframe src="zadanie2_output.html" class="output-frame" title="Wynik Zadania 2"></iframe>
+
+        <h2>Kod Strony (HTML + CSS):</h2>
+        <p><strong>HTML (struktura):</strong></p>
+        <pre><code class="code-html"><!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Stylowanie CSS</title>
+    <!-- Link do zewnętrznego arkusza stylów -->
+    <link rel="stylesheet" href="zadanie2_style.css">
+</head>
+<body>
+    <div class="box">
+        <h2>Ostrylowany Nagłówek</h2>
+        <p>Ten paragraf ma inne tło i zaokrąglone rogi.</p>
+    </div>
+    <button class="styled-button">Kliknij mnie!</button>
+</body>
+</html>
+</code></pre>
+        <p><strong>CSS (plik <code>zadanie2_style.css</code>):</strong></p>
+        <pre><code class="code-css">/* Plik: zadanie2_style.css */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #e9e9e9;
+    padding: 15px;
+}
+
+.box {
+    border: 2px solid blue;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+}
+
+.box h2 {
+    color: darkblue;
+    text-align: center;
+}
+
+.box p {
+    background-color: #f0f8ff; /* AliceBlue */
+    padding: 10px;
+    border-radius: 8px;
+    color: #333;
+}
+
+.styled-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.styled-button:hover {
+    background-color: darkgreen;
+}
+</code></pre>
+    </div>
+</body>
+</html>
