@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 3: Prosty skrypt JS (Alert) - bylezdac</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container task-detail-container">
+        <a href="index.html" class="back-link">← Wróć do listy</a>
+        <h1>Zadanie 3: Prosty skrypt JS (Alert)</h1>
+
+        <h2>Efekt / Wygląd Strony:</h2>
+        <p>Kliknij przycisk poniżej, aby zobaczyć efekt (pojawi się alert).</p>
+        <iframe src="zadanie3_output.html" class="output-frame" title="Wynik Zadania 3"></iframe>
+
+        <h2>Kod Strony (HTML + JS):</h2>
+        <pre><code class="code-html"><!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Prosty JS Alert</title>
+    <style>
+        body { padding: 15px; font-family: sans-serif; }
+        button { padding: 10px 15px; font-size: 1em; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Test JavaScript</h2>
+    <p>Kliknij przycisk, aby wyświetlić komunikat.</p>
+
+    <button onclick="showAlert()">Pokaż Alert</button>
+
+    <script>
+        // Prosta funkcja JavaScript wywoływana przez przycisk
+        function showAlert() {
+            alert('Witaj! To jest prosty alert JavaScript.');
+        }
+    </script>
+
+</body>
+</html>
+</code></pre>
+        <p><strong>Wyjaśnienie kodu JS:</strong></p>
+        <pre><code class="code-js">// Definicja funkcji o nazwie showAlert
+function showAlert() {
+    // Wywołanie wbudowanej funkcji alert() z wiadomością
+    alert('Witaj! To jest prosty alert JavaScript.');
+}
+
+// Atrybut 'onclick="showAlert()"' w tagu <button>
+// powoduje wywołanie tej funkcji po kliknięciu przycisku.
+</code></pre>
+    </div>
+</body>
+</html>
