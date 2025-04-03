@@ -23,17 +23,22 @@
         </main>
 
         <div id="taskModal" class="modal">
-                         <div class="modal-content">
-                 <span class="close">×</span>
-                 <h2 id="modalTitle"></h2>
-+                <!-- Added Button Container -->
-+                <div class="modal-actions">
-+                    <button id="fullscreenBtn">Podgląd Pełnoekranowy</button>
-+                    <button id="downloadBtn">Pobierz Kod (.txt)</button>
-+                </div>
-                 <div class="preview-section">
-                     <h3>Podgląd:</h3>
-                     <div id="taskPreview" class="preview-container"></div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div class="preview-section">
+                    <h3>Podgląd:</h3>
+                    <div id="taskPreview" class="preview-container"></div>
+                </div>
+                <div class="code-section">
+                    <h3>Kod źródłowy:</h3>
+                    <pre><code id="taskCode"></code></pre>
+                </div>
+                <div class="action-buttons">
+                    <button id="downloadBtn" class="action-btn download-btn">Pobierz zadanie</button>
+                    <button id="fullscreenBtn" class="action-btn fullscreen-btn">Pełny podgląd</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
