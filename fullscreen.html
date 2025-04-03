@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pełny podgląd zadania - bylezdac</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
+            --text-primary: #ffffff;
+            --text-secondary: #a8a8a8;
+            --accent: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .preview-container {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-button:hover {
+            background-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="taskTitle">Podgląd zadania</h1>
+        <div id="taskPreview" class="preview-container">
+            <!-- Zadanie zostanie załadowane przez JavaScript -->
+        </div>
+    </div>
+    <button class="back-button" onclick="window.close()">&times;</button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Odczytaj parametry URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const taskId = urlParams.get('id');
+            
+            if (!taskId) {
+                document.getElementById('taskTitle').textContent = 'Nie znaleziono zadania';
+                document.getElementById('taskPreview').innerHTML = '<p>Brak zadania do wyświetlenia.</p>';
+                return;
+            }
+            
+            // Pobierz dane zadania z localStorage (jeśli zostały tam umieszczone wcześniej)
+            // Normalnie tutaj byłoby zapytanie do serwera o dane zadania
+            const taskData = localStorage.getItem(`task_${taskId}`);
+            
+            if (taskData) {
+                const task = JSON.parse(taskData);
+                document.getElementById('taskTitle').textContent = task.title;
+                document.getElementById('taskPreview').innerHTML = task.preview;
+                
+                // Dodaj niezbędne funkcje dla podglądu
+                if (task.id === 1) {
+                    window.calculate = function() {
+                        const num1 = parseFloat(document.getElementById('num1').value);
+                        const num2 = parseFloat(document.getElementById('num2').value);
+                        const operator = document.getElementById('operator').value;
+                        let result;
+            
+                        switch(operator) {
+                            case '+': result = num1 + num2; break;
+                            case '-': result = num1 - num2; break;
+                            case '*': result = num1 * num2; break;
+                            case '/': result = num2 !== 0 ? num1 / num2 : 'Nie można dzielić przez zero'; break;
+                        }
+            
+                        document.getElementById('result').textContent = `Wynik: ${result}`;
+                    };
+                } else if (task.id === 2) {
+                    window.addTodo = function() {
+                        const input = document.getElementById('todoInput');
+                        const list = document.getElementById('todoList');
+                        
+                        if (input.value.trim() !== '') {
+                            const li = document.createElement('li');
+                            li.textContent = input.value;
+                            li.style.cursor = 'pointer';
+                            li.onclick = function() {
+                                this.style.textDecoration = 
+                                    this.style.textDecoration === 'line-through' ? 
+                                    'none' : 'line-through';
+                            };
+                            list.appendChild(li);
+                            input.value = '';
+                        }
+                    };
+                }
+            } else {
+                document.getElementById('taskTitle').textContent = 'Nie znaleziono zadania';
+                document.getElementById('taskPreview').innerHTML = '<p>Brak zadania do wyświetlenia.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
