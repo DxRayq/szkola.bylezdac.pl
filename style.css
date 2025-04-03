@@ -158,3 +158,35 @@ code {
         padding: 1rem;
     }
 }
+
+     color: var(--accent);
+ }
+ 
+/* Styles for new buttons in modal */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem; /* Add space before preview */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.modal-actions button {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.modal-actions button:hover {
+    background-color: var(--accent-hover);
+}
+
+ .preview-section, .code-section {
+     margin-top: 2rem;
+ }
